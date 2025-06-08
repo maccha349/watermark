@@ -1,4 +1,3 @@
-output/
-*.png
-*.jpg
-*.jpeg
+/output/*
+/pics/*
+!/pics/.gitkeep

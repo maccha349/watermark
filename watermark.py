@@ -1,8 +1,8 @@
 from __future__ import annotations
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Tuple
 
-import argparse, os
+import argparse
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 
@@ -224,13 +224,13 @@ def parse_args() -> argparse.Namespace:
         default="bottom-right",
         help="配置モード",
     )
-    p.add_argument("--text", default="@まっちゃ", help="表示テキスト")
+    p.add_argument("--text", default="sample", help="表示テキスト")
     p.add_argument("--font-size", type=int, help="固定フォントサイズ(px)")
     p.add_argument("--font-ratio", type=float, default=0.05, help="基準値×比率")
     p.add_argument(
         "--fit",
         choices=["long", "short", "width", "height", "diag"],
-        default="long",
+        default="diag",
         help="フォントサイズ算出基準",
     )
     p.add_argument("--opacity", type=int, default=128, help="不透明度 0–255")
