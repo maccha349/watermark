@@ -1,0 +1,1 @@
+python watermark.py --font .\fonts\KiwiMaru-Regular.ttf --mode center --fit diag --stroke-width 4 --shadow-blur 6 --text "@maccha"
