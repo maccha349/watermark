@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Iterable, Tuple
 
 import argparse
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 
 
 # ────────────────────────── フォントロード ──────────────────────────
@@ -174,6 +174,7 @@ def process_directory(
 
     for img_path in files:
         img = Image.open(img_path)
+        img = ImageOps.exif_transpose(img) # スマホやカメラで撮った JPEG には EXIF Orientation 回転情報が含まれることがあるので、正しい向きに変換
         w, h = img.size
 
         # フォントサイズ計算
